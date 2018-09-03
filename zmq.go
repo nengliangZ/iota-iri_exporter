@@ -426,7 +426,7 @@ func badgerDBCleanup(db *badger.DB) {
 	// Cleanup every 15 minutes
 	for {
 		time.Sleep(15 * time.Minute)
-		db.PurgeOlderVersions()
+		// db.PurgeOlderVersions()
 		db.RunValueLogGC(0.5)
 		log.Info("BadgerDB purge.")
 	}
